@@ -6,6 +6,8 @@ A clean, responsive personal resume website for **Vishwadev Gupta**, an AWS DevO
 
 The main portfolio page is available through `index.html`.
 
+👉 **[View Live Resume](https://vishwadevgupta.github.io/VishwadevResume/)**
+
 You can host this repository using **GitHub Pages**.
 
 ## About
