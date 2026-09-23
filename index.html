@@ -1,145 +1,573 @@
- 
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Resume: VIshwadev Gupta</title>
-    <link rel="icon" href="img/v.png" type="image/png" sizes="16*16" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vishwadev Gupta - AWS DevOps Engineer with 4+ years of experience in cloud infrastructure, CI/CD, Kubernetes, Docker, Terraform and AWS.">
+  <title>Vishwadev Gupta | AWS DevOps Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
-    <style>
+  <style>
+    :root {
+      --navy: #0f172a;
+      --blue: #2563eb;
+      --blue-light: #eff6ff;
+      --text: #172033;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+      --white: #ffffff;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Rubik', sans-serif;
-        }
-        .leftside {
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-            width: 30%;
-            height: 150vh;
+    html { scroll-behavior: smooth; }
 
-        }
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-            padding:10px;
-        }
-        .leftside .btn {
-            text-decoration: none;
-            font-weight: 900;
-            font-size: 14px;
-            text-align: center;
-            padding: 12px 25px;
-            cursor: pointer;
-            border-radius: 5px;
-            display: inline-block;
-            margin-left: 110px;
-            color: #fff;
-            background-image: linear-gradient(to right, #4458dc 0%,#b3c6f8 100%), radial-gradient(circle at top left,#4458dc,#854fee);
-            border: double 2px transparent;
-            box-shadow: 0 10px 30px rgba(118,85,225,.3);
-        }
-        .leftside .btn:hover {
-            border: 2px solid #4458dc;
-            color: #222;
-            background-color: #fff;
-            box-shadow: none;
-            background-image: none;
-        }
-    </style>
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1100px, calc(100% - 36px));
+      margin: auto;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #172554 100%);
+      color: white;
+      padding: 64px 0 52px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .eyebrow {
+      color: #93c5fd;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .78rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 7vw, 4.6rem);
+      line-height: 1;
+      letter-spacing: -.05em;
+      margin-bottom: 14px;
+    }
+
+    .role {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #bfdbfe;
+      margin-bottom: 16px;
+    }
+
+    .hero-summary {
+      max-width: 760px;
+      color: #dbeafe;
+      font-size: 1rem;
+    }
+
+    .initials {
+      width: 145px;
+      height: 145px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(145deg, #3b82f6, #1d4ed8);
+      border: 5px solid rgba(255,255,255,.14);
+      box-shadow: 0 20px 45px rgba(0,0,0,.25);
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .contact a, .contact span {
+      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(255,255,255,.06);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: .85rem;
+      color: #e2e8f0;
+    }
+
+    .contact a:hover {
+      background: rgba(255,255,255,.14);
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      min-height: 56px;
+      align-items: center;
+      overflow-x: auto;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: .82rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    nav a:hover { color: var(--blue); }
+
+    /* Main */
+    main { padding: 44px 0 70px; }
+
+    section {
+      margin-bottom: 44px;
+      scroll-margin-top: 75px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .section-number {
+      color: var(--blue);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      letter-spacing: -.025em;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 24px;
+      box-shadow: 0 7px 24px rgba(15,23,42,.04);
+    }
+
+    .summary {
+      color: #475569;
+      font-size: .96rem;
+    }
+
+    /* Skills */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .skill h3 {
+      font-size: .95rem;
+      margin-bottom: 9px;
+    }
+
+    .skill p {
+      color: var(--muted);
+      font-size: .87rem;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 8px;
+      margin: 3px 3px 3px 0;
+      border-radius: 6px;
+      background: var(--blue-light);
+      color: #1d4ed8;
+      font-size: .76rem;
+      font-weight: 600;
+    }
+
+    /* Experience */
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .experience {
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .experience::before {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 29px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 0 5px var(--blue-light);
+    }
+
+    .experience::after {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 44px;
+      bottom: -28px;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .experience:last-child::after { display: none; }
+
+    .role-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .role-row h3 { font-size: 1.06rem; }
+
+    .company {
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .date, .location {
+      color: var(--muted);
+      font-size: .82rem;
+      font-weight: 500;
+    }
+
+    .location { margin-bottom: 10px; }
+
+    ul { padding-left: 19px; }
+
+    li {
+      color: #475569;
+      font-size: .89rem;
+      margin: 6px 0;
+    }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .project h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    /* Bottom */
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .list-clean {
+      list-style: none;
+      padding: 0;
+    }
+
+    .list-clean li {
+      border-bottom: 1px solid var(--border);
+      padding: 11px 0;
+      margin: 0;
+    }
+
+    .list-clean li:last-child { border-bottom: 0; }
+
+    footer {
+      background: var(--navy);
+      color: #94a3b8;
+      text-align: center;
+      padding: 25px;
+      font-size: .8rem;
+    }
+
+    footer strong { color: white; }
+
+    @media (max-width: 760px) {
+      .hero { padding: 48px 0; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .initials { width: 100px; height: 100px; font-size: 2.1rem; order: -1; }
+      .skills, .projects, .bottom-grid { grid-template-columns: 1fr; }
+      .nav-inner { justify-content: flex-start; }
+      .container { width: min(100% - 26px, 1100px); }
+    }
+
+    @media print {
+      nav { display: none; }
+      .hero { padding: 30px 0; }
+      main { padding: 20px 0; }
+      .card { box-shadow: none; }
+      body { background: white; }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="leftside" style="color:#c9cad0; background-color: #0c192f; float:left; margin:18px;">
-        <img src="img/v.png" style="width:200px; border-radius:50%; border: 1px solid #c9cad0;  margin-left: 95px;  margin-top: 40px;" /><br /><br />
-        <h1 style="text-align:center;font-size:250%;"><b>Vishwadev Gupta</b></h1><br />
-        <h4 style="text-align:justify; margin-left:5%; font-size:120%;">Contact no.: +91-9536133303</h4><br />
-        <h4 style="text-align:justify; margin-left:5%;font-size:120%;">Email: vishwadevguptaswadhin@gmail.com</h4><br />
-        <h4 style="text-align:justify; margin-left:5%;margin-right:5%;font-size:120%;">Address: 32,Civil lines,Indira chowk,Budaun</h4><br />
-        <h4 style="text-align:justify; margin-left:5%;font-size:120%;">Date of birth: 05/08/1999</h4><br />
-        <h4 style="text-align:justify; margin-left:5%;font-size:120%;">Nationality: Indian</h4><br />
-        <h4 style="text-align:justify; margin-left:5%;font-size:120%;">Languages: English & Hindi</h4><br />
-        <a href="https://github.com/Vishwadev05819" target="_blank" ;>
-            <img src="img/github.png" style="width:50px; margin:20px;" />
-        </a>
-        <a href="https://www.hackerrank.com/vishwadevguptas1" target="_blank">
-            <img src="img/hacker.png" style="width:50px;margin:20px;" />
-        </a>
-        <a href="https://www.linkedin.com/in/vishwadevgupta/" target="_blank">
-            <img src="img/linked.png" style="width:50px;margin:20px;" />
-        </a>
-        <a href="https://www.instagram.com/scorpion5819/" target="_blank">
-            <img src="img/insta.png" style="width:50px;margin:20px;" />
-</a>
-         </div>
-    <br /
-        <div style="border: 1px solid black; background-color:#0c192f;color:#c9cad0;text-align:center;font-size:200%;margin:0px 18px 0px 400px;">Career Objective</div>
-        <br />
-        <p style="font-size:110%;">
-            To succeed in an environment of growth and excellence and earn a job which provides me job satisfaction and self-development and help me achieve personal as well as organisational goals.
-        </p><br />
-        <div style="border: 1px solid black; background-color:#0c192f;color:#c9cad0;text-align:center;font-size:200%;margin:0px 18px 0px 400px;">Academic Details</div>
-        <br />
-        <table style="width:60%;margin-left:35%;">
-            <tr style=" background-color: #d3dff5;">
-                <th style="font-size:140%;">Degree/Class</th>
-                <th style="font-size:140%;">University/Board</th>
-                <th style="font-size:140%;">Percentage/CGPA</th>
-                <th style="font-size:140%;">Year</th>
-            </tr>
-            <tr style="text-align:center;">
-                <td>BCA</td>
-                <td>MJPRU</td>
-                <td>70%</td>s
-                <td>2020</td>
-            </tr>
-            <tr style="text-align:center;">
-                <td>12<sup>th</sup></td>
-                <td>CBSE</td>
-                <td>61%</td>
-                <td>2017</td>
-            </tr>
-            <tr style="text-align:center;">
-                <td>10<sup>th</sup></td>
-                <td>icse</td>
-                <td>69%</td>
-                <td>2015</td>
-            </tr>
-        </table>
-        <br />
-        <div style="border: 1px solid black; background-color:#0c192f;color:#c9cad0;text-align:center;font-size:200%;margin:0px 18px 0px 400px;">Qualities</div>
-        <br />
-        <ul style="margin-left:35%;line-height:1.5;font-size:110%;">
-            <li>Good communication skills</li>
-            <li>Good leadership quality</li>
-            <li>Capable of working under pressure</li>
-            <li>Believe in teamwork</li>
-            <li>Never say die attitude</li>
-            <li>Fast learner</li>
+
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Cloud • DevOps • Infrastructure</div>
+      <h1>Vishwadev Gupta</h1>
+      <div class="role">AWS DevOps Engineer</div>
+      <p class="hero-summary">
+        AWS DevOps Engineer with 4+ years of experience in cloud infrastructure, CI/CD automation,
+        Kubernetes, Docker, Terraform, AWS, scalable cloud environments, deployment pipelines and monitoring solutions.
+      </p>
+
+      <div class="contact">
+        <span>📍 Bangalore, India</span>
+        <a href="mailto:vishwadevguptaswadhin@gmail.com">✉ Email</a>
+        <a href="tel:+919536133303">☎ +91 9536133303</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="initials">VG</div>
+  </div>
+</header>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="#summary">Summary</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#education">Education</a>
+  </div>
+</nav>
+
+<main class="container">
+
+  <section id="summary">
+    <div class="section-title">
+      <span class="section-number">01</span>
+      <h2>Professional Summary</h2>
+    </div>
+    <div class="card summary">
+      AWS DevOps Engineer with 4+ years of experience in cloud infrastructure, CI/CD automation,
+      Kubernetes, Docker, Terraform, and AWS. Skilled in building scalable cloud environments,
+      infrastructure automation, deployment pipelines, and monitoring solutions. AWS Certified
+      Solutions Architect – Associate with hands-on experience in EKS, Jenkins, GitHub Actions,
+      ArgoCD, and cloud-native technologies.
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-title">
+      <span class="section-number">02</span>
+      <h2>Technical Skills</h2>
+    </div>
+
+    <div class="skills">
+      <div class="card skill">
+        <h3>Cloud & Infrastructure</h3>
+        <p>
+          <span class="tag">AWS</span><span class="tag">EKS</span><span class="tag">EC2</span>
+          <span class="tag">S3</span><span class="tag">RDS</span><span class="tag">Lambda</span>
+          <span class="tag">Kubernetes</span><span class="tag">Docker</span><span class="tag">Azure</span><span class="tag">GCP</span>
+        </p>
+      </div>
+
+      <div class="card skill">
+        <h3>Infrastructure as Code</h3>
+        <p>
+          <span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">CloudFormation</span>
+        </p>
+      </div>
+
+      <div class="card skill">
+        <h3>CI/CD & Automation</h3>
+        <p>
+          <span class="tag">Jenkins</span><span class="tag">GitHub Actions</span>
+          <span class="tag">ArgoCD</span><span class="tag">Helm</span>
+        </p>
+      </div>
+
+      <div class="card skill">
+        <h3>Monitoring & Logging</h3>
+        <p>
+          <span class="tag">New Relic</span><span class="tag">CloudWatch</span>
+        </p>
+      </div>
+
+      <div class="card skill">
+        <h3>Programming & Scripting</h3>
+        <p>
+          <span class="tag">Python</span><span class="tag">Bash</span><span class="tag">YAML</span>
+        </p>
+      </div>
+
+      <div class="card skill">
+        <h3>Security & Version Control</h3>
+        <p>
+          <span class="tag">IAM</span><span class="tag">Vault</span><span class="tag">Secrets Management</span>
+          <span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">GitLab</span><span class="tag">Bitbucket</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-title">
+      <span class="section-number">03</span>
+      <h2>Professional Experience</h2>
+    </div>
+
+    <div class="timeline">
+
+      <article class="card experience">
+        <div class="role-row">
+          <h3>Infrastructure Specialist <span class="company">| IBM</span></h3>
+          <span class="date">September 2025 – Present</span>
+        </div>
+        <div class="location">Bangalore, India</div>
+        <ul>
+          <li>Supporting AWS cloud infrastructure and DevOps operations for enterprise applications.</li>
+          <li>Managing infrastructure provisioning, deployment activities, monitoring, and environment support.</li>
+          <li>Assisting in CI/CD pipeline execution and release management processes.</li>
+          <li>Collaborating with development and operations teams to ensure platform stability and security.</li>
+          <li>Participating in incident resolution, operational support, and infrastructure optimization.</li>
         </ul>
-        <br />
-        <div style="border: 1px solid black; background-color:#0c192f;color:#c9cad0;text-align:center;font-size:200%;margin:0px 18px 0px 400px;">Skills</div>
-        <br />
-        <ul style="margin-left:35%;line-height:1.5;font-size:110%;">
-            <li>
-                <b>Computer Skills:</b>
-                <br /><p style="margin-left:2%;">MS Office, Google Drive, Email, PowerPoint, Social media, Web enterprise system.</p>
-            </li>
-            <li>
-                <b>Programming language:</b>
-                <br /><p style="margin-left:2%;">C and C++</p>
-            </li>
-            <li>
-                <b>Web Technology:</b>
-                <br /><p style="margin-left:2%;">Basic HTML and CSS</p>
-            </li>
+      </article>
+
+      <article class="card experience">
+        <div class="role-row">
+          <h3>DevOps Engineer <span class="company">| Capgemini</span></h3>
+          <span class="date">September 2022 – September 2025</span>
+        </div>
+        <div class="location">Bangalore, India</div>
+        <ul>
+          <li>Contributed to migration of production Kubernetes clusters from Kops to AWS EKS, reducing infrastructure costs and improving scalability.</li>
+          <li>Streamlined CI/CD pipelines using Jenkins and GitHub Actions, reducing deployment effort and improving release efficiency.</li>
+          <li>Automated cloud provisioning using Terraform and Ansible, improving infrastructure consistency and reliability.</li>
+          <li>Enhanced monitoring and alerting using New Relic and Grafana, improving incident response and system uptime.</li>
+          <li>Implemented IAM, Vault integration, and security best practices across CI/CD and cloud environments.</li>
         </ul>
-        <br />
-        <div style="border: 1px solid black; background-color:#0c192f;color:#c9cad0;text-align:center;font-size:200%;margin:0px 18px 0px 400px;">Declaration:</div>
-        <br />
-        <ul style="margin-left:35%;line-height:1.5;font-size:110%;">
-            <li>I do hereby declare that above given information is true to the best of my knowledge and belief.</li>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-title">
+      <span class="section-number">04</span>
+      <h2>Projects</h2>
+    </div>
+
+    <div class="projects">
+
+      <article class="card project">
+        <h3>EKS Migration</h3>
+        <ul>
+          <li>Migrated a production Kubernetes cluster from Kops to AWS EKS, leveraging AWS Auto Scaling Groups, Managed Node Groups, and Fargate for optimized resource utilization.</li>
+          <li>Integrated AWS-native features like IAM Roles for Service Accounts (IRSA), VPC CNI, and EBS CSI Drivers for enhanced security and performance.</li>
+          <li>Implemented GitOps-based deployment pipelines using ArgoCD and GitHub Actions, enabling automated and rollback-friendly deployments.</li>
+          <li>Optimized monitoring with New Relic and Grafana, enabling real-time performance tracking and proactive troubleshooting.</li>
         </ul>
+      </article>
+
+      <article class="card project">
+        <h3>MCD Orders Capability Deployments</h3>
+        <ul>
+          <li>Designed and implemented CI/CD pipelines using Jenkins for automated deployments, reducing deployment time by 50%.</li>
+          <li>Managed configuration repositories using Bitbucket, later migrated to GitHub, for version control and collaboration.</li>
+          <li>Utilized Consul for configuration management, enabling service discovery and distributed configuration storage.</li>
+          <li>Secured sensitive data by integrating Vault for secrets management across environments.</li>
+          <li>Provisioned and managed infrastructure using Terraform, automating deployments and ensuring infrastructure consistency.</li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="section-title">
+      <span class="section-number">05</span>
+      <h2>Certifications</h2>
+    </div>
+
+    <div class="card">
+      <ul class="list-clean">
+        <li><strong>AWS Certified Solutions Architect – Associate</strong></li>
+        <li><strong>AWS Certified Cloud Practitioner</strong></li>
+        <li><strong>Agile Software Development</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-title">
+      <span class="section-number">06</span>
+      <h2>Education</h2>
+    </div>
+
+    <div class="bottom-grid">
+      <div class="card">
+        <ul class="list-clean">
+          <li>
+            <strong>Master of Computer Applications (MCA)</strong><br>
+            <span class="date">UPTU, Lucknow – 80%</span>
+          </li>
+          <li>
+            <strong>Bachelor of Computer Applications (BCA)</strong><br>
+            <span class="date">MJPRU, Bareilly – 70%</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 style="font-size:1rem; margin-bottom:8px;">Focus Areas</h3>
+        <p style="color:#64748b; font-size:.88rem;">
+          AWS · Kubernetes · Docker · Terraform · CI/CD · GitOps · Infrastructure Automation · Monitoring
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <strong>Vishwadev Gupta</strong> · AWS DevOps Engineer
+  <br>
+  Professional Resume Portfolio
+</footer>
+
 </body>
-</html> 
+</html>
